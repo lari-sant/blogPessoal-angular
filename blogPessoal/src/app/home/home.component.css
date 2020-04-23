@@ -1,10 +1,191 @@
- .parallax{
-     background-image: url(https://i.imgur.com/PEoH721I.jpg);
-     min-height: 500px;
-     background-attachment: fixed;
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
- }
+.container{
+	scroll-behavior: smooth;
+}
+.banner{
+	position: relative;
+	height:100vh;
+	width:100%;
+	background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url('src/assets/1.jpg');
+	background-position:50% 50%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: #fff;
+	overflow: hidden;
+}
+.banner:after{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 270px 0 0 500px;
+	border-color: transparent transparent transparent #fff;
+	content: '';
+	position: absolute;
+	bottom:-5%;
+}
+.banner:before{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 270px 1500px;
+	border-color: transparent transparent #fff transparent;
+	content: '';
+	position: absolute;
+	right:0;
+	bottom:-5%;
+}
+.banner .info-head{
+	position: absolute;
+	height:auto;
+	width:100%;
+	top:15%;
+	transform: translateY(-15%);
+}
+.banner .info-head .heading{
+	font-size: 60px;
+	margin-left:25%;
+	margin-top:10%;
+	transform: translate(-25%,-10%);
+	height:auto;
+	width:auto;
+	font-weight: 600; 
+}
+.banner .info-head .name:before{
+	content: attr(data-text1); 
+	position: relative;
+	animation-name: ram ;
+	animation-duration: 10s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	transition: 0.5s ease-in-out;
+	width:100%;
+}
+.banner .info-head ul li i{
+	cursor: pointer;
+	text-align: center;
+	text-shadow: 0px -5px 15px rgba(0, 0, 0, 0.95);
+	transition: 0.5s ease-in-out;
+}
+.banner .info-head ul li i:hover{
+	color:#bbb;
+}
+.banner .arrow{
+	position: absolute;
+	height:5%;
+	width:2%;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	padding:20px 10px;
+	left:10%;
+	top:55%;
+	transform: translate(-10%,-55%);
+	text-decoration: none;
+	color:#fff;
+}
+.banner .arrow i{
+	font-size: 35px;
+	font-weight: 600;
+	animation:animate 1.5s linear infinite;
+	text-shadow: 20px 5px 15px rgba(0, 0, 0, 0.95);
+}
 
+@keyframes animate{
+	0%{
+		transform: translateY(-10px);
+	}
+	20%{
+		transform: translateY(3px);
+	}
+	40%{
+		transform: translateY(-5px);
+	}
+	60%{
+		transform: translateY(6px);
+	}
+	80%{
+		transform: translateY(3px);
+	}
+	100%{
+		transform: translateY(-10px);
+	}
+}
+@keyframes ram{
+	0%{
+		content: attr(data-text1);
+	}
+	50%{
+		content: attr(data-text3);
+	}
+	100%{
+		content: attr(data-text2);
+	}
+}
+.head{
+	position: relative;
+	height:100%;
+	width:100%;
+}
+.head .head1{
+	height:auto;
+	width:85%;
+	font-size:35px;
+	font-weight:900;
+	margin:5% auto 0 auto;
+	text-align: center;
+	padding:10px;
+}
+.head .head1-info{
+	height:auto;
+	width:90%;
+	font-size:22px;
+	font-weight:300;
+	margin:5% auto;
+	text-align: justify;
+	color:#000;
+}
+.slider{
+    position: relative;
+    background-repeat: no-repeat;
+
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .slider{
+    background: url('src/assets/bg1.jpg');
+    background-size: cover;
+    height: 450px;
+    width: 800px;
+    box-shadow: 0px 5px 8px rgba(0,0,0,.3);
+    animation: animate 20s infinite;
+  }
+  @keyframes animate{
+    20%{
+      background: url('src/assets/bg2.jpg');
+      background-size: cover;
+    }
+    40%{
+      background: url('src/assets/bg3.jpg');
+      background-size: cover;
+    }
+    60%{
+      background: url('src/assets/bg4.jpg');
+      background-size: cover;
+    }
+    80%{
+      background: url('src/assets/bg5.jpg');
+      background-size: cover;
+    }
+    100%{
+      background: url('src/assets/bg1.jpg');
+      background-size: cover;
+    }
+  
+  }
+  
    
